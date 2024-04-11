@@ -65,8 +65,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 from sshtunnel import SSHTunnelForwarder
 ssh_tunnel = SSHTunnelForwarder(
     ('46.4.196.95',1022),
-    ssh_username = 'postgres',
-    ssh_password = 'batumi19',
+    ssh_username = '',   #postgres
+    ssh_password = '',  #batumi19
     remote_bind_address = ('localhost', 5432)
 )
 ssh_tunnel.start()
@@ -86,7 +86,7 @@ DATABASES = {
         'PORT' : ssh_tunnel.local_bind_port,
         'NAME' : 'awa',
         'USER' : 'awa',
-        'PASSWORD' : 'Batumi19awa' 
+        'PASSWORD' : '' #Batumi19awa
     }
 }
 
